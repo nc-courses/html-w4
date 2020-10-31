@@ -29,7 +29,9 @@
     <script>
       let numberOfFaces = 5;
       const theLeftSide = document.querySelector("#leftSide");
-      console.log(theLeftSide);
+
+      const theRightSide = document.querySelector("#rightSide");
+
       function generateFaces() {
         for (let i = 0; i < numberOfFaces; i++) {
           // face = <img />
@@ -46,6 +48,34 @@
           face.style.left = randomLeft + "px";
           theLeftSide.appendChild(face);
         }
+
+        const leftSideImages = theLeftSide.cloneNode(true);
+        console.log(leftSideImages);
+        leftSideImages.removeChild(leftSideImages.lastChild);
+        theRightSide.appendChild(leftSideImages);
+
+        theLeftSide.lastChild.addEventListener("click", nextLevel);
+        document.body.addEventListener("click", gameOver);
+      }
+
+      function nextLevel(event) {
+        event.stopPropogation();
+        while (theLeftSide.firstChild) {
+          theLeftSide.removeChild(theLeftSide.firstChild);
+        }
+
+        while (theRightSide.firstChild) {
+          theRightSide.removeChild(theRightSide.firstChild);
+        }
+
+        numberOfFaces += 5;
+        generateFaces();
+      }
+
+      function gameOver() {
+        alert("Game over!");
+        document.body.removeEventListener("click", gameOver);
+        theLeftSide.lastChild.removeEventListener("click", nextLevel);
       }
 
       // generateFaces();
