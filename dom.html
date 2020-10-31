@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="myh1" class="h1class">My header</h1>
+    <a id="aId" href=""></a>
+    <!-- <h2>New node</h2> -->
+    <button>Click here</button>
+  </body>
+  <script>
+    // let h1 = document.getElementByClassName("h1class");
+    let h12 = document.getElementsByTagName("h1");
+    let h13 = document.getElementById("myh1");
+    let myFavorite = document.querySelector(".h1class");
+    let myFavorite2 = document.querySelector("#myh1");
+    let myFavorite3 = document.querySelector("h1");
+    console.log(myFavorite);
+
+    let newNode = document.createElement("h2");
+    newNode.innerHTML = "New node";
+    document.querySelector("body").appendChild(newNode);
+    document.querySelector("#myh1").remove();
+    // document.querySelector("#myh1").cloneNode();
+
+    function alertFunc() {
+      alert("You clicked the button");
+      //   document.querySelector("button").removeEventListener("click", alertFunc);
+    }
+
+    document.querySelector("button").addEventListener("click", alertFunc);
+  </script>
+</html>

@@ -6,4 +6,70 @@
     <title>Document</title>
   </head>
   <body></body>
+  <script>
+    let i = 0;
+    while (i < 10) {
+      // it prints (i.e. it displays) to the console of the browser
+      console.log("while loop i = ", i);
+      i += 1;
+    }
+
+    for (let j = 0; j < 10; j += 1) {
+      console.log("for loop j = ", j);
+    }
+
+    let arr = [1, 2, 3, 4, 5, 6, 6, 78, 8, 9];
+    console.log(arr[7]);
+    for (let j = 0; j < arr.length; j += 1) {
+      console.log("for loop element = ", arr[j]);
+    }
+
+    for (let element of arr) {
+      console.log("shortcut for loop element = ", element);
+    }
+
+    for (let j = 0; j < 10; j += 1) {
+      if (j === 2) {
+        console.log("break out of for loop j = ", j);
+        break;
+      }
+      console.log("DO NOT break out of for loop j = ", j);
+    }
+
+    for (let j = 0; j < 10; j += 1) {
+      if (j === 3) {
+        console.log("skip for loop j = ", j);
+        continue;
+      }
+      console.log("DO NOT skip out of for loop j = ", j);
+    }
+
+    let arr1 = [3, 2, 1];
+    let arr2 = [6, 5, 4];
+
+    // console.log(arr2.concat(arr1));
+    // console.log(arr1.sort());
+
+    // console.log(arr2.reverse());
+
+    console.log("slice ", arr1.slice(0, 2));
+    console.log(arr1);
+
+    console.log("splice ", arr1.splice(0, 2));
+    console.log(arr1);
+
+    let arrStr = ["T", "o", "m", "m", "y", " ", "E"];
+    let str = "Tommy Edward";
+
+    console.log("Nothing ", str[5]);
+    console.log(str.length);
+
+    for (let j = 0; j < str.length; j += 1) {
+      console.log("for loop letter = ", str[j]);
+    }
+
+    for (let letter of str) {
+      console.log("shortcut for loop letter = ", letter);
+    }
+  </script>
 </html>
