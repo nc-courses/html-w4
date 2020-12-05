@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="h1Id">Hello World!</h1>
+    <h1>Hello World!</h1>
+    <h1 class="h1Class">Hello World!</h1>
+    <h1>Hello World!</h1>
+    <h1>Hello World!</h1>
+    <p>Welcome to my webpage.</p>
+    <script>
+      // for loop
+      // word toggle wrap shortcut --> command + z or alt + z
+      //   let age = 1;
+      //   while (age < 21) {
+      //     console.log("You cannot drink, you are only " + age + " years old");
+      //     age++;
+      //   }
+
+      for (let age = 1; age < 21; age++) {
+        // console.log("You cannot drink, you are only " + age + " years old");
+      }
+
+      const contacts = [1, 2, 3, 4, 5];
+
+      for (let i = 0; i < contacts.length; i++) {
+        //   console.log(contacts[i]);
+      }
+
+      // for of loop
+      for (let eachContact of contacts) {
+        // console.log(eachContact);
+      }
+
+      // break & continue
+      for (let i = 0; i < contacts.length; i++) {
+        if (i >= 4) {
+          //   console.log("byeeee");
+          break;
+        }
+        if (i === 2) {
+          //   console.log("skip the console.log on line 44");
+          continue;
+        }
+        // console.log("you're still in the loop");
+      }
+
+      // concat
+      const arr = [1, 2, 3, 4, 5];
+      const arr2 = [1, 2, 3, 4, 5];
+
+      //   console.log(arr.concat(arr2));
+
+      // spread operator - take a look when you have time
+      //   console.log([...arr, ...arr2]);
+
+      // sort
+      const arrSort = [6, 3, 2, 6, 7, 8, 7, 4, 3];
+      //   console.log(arrSort.sort());
+      //   console.log(arrSort.sort().reverse());
+
+      // reverse
+      const arrRev = [1, 2, 3, 4, 5];
+      //   console.log(arrRev.reverse());
+
+      // slice
+      const arrSli = [1, 2, 3, 4, 5];
+      const arrSli2 = arrSli.slice(0, 2);
+      //   console.log(arrSli2);
+      //   console.log(arrSli);
+
+      // splice
+      const arrSpli = [1, 2, 3, 4, 5];
+      const arrSpli2 = arrSpli.splice(0, 2);
+      //   console.log(arrSpli2);
+      //   console.log(arrSpli);
+
+      // string indices
+      let arrStr = ["J", "u", "a", "n"];
+      let str = "Juan";
+      //   console.log(str[0]);
+      //   console.log(arrStr[0]);
+
+      // looping through string with for loop or for of loop
+      for (let letter of str) {
+        // console.log(letter);
+      }
+
+      // DOM tree
+      // the DOM tree joins the HTML and JS. We say that the DOM allows the JS to make changes to the HTML
+
+      // firstChild
+      //   console.log(document.querySelector("body").firstChild);
+
+      // firstElementChild
+
+      // lastChild
+
+      // lastElementChild
+
+      // getElementsByTag
+      //   console.log(document.getElementsByTagName("h1"));
+
+      // getElementById
+      //   console.log(document.getElementById("h1Id"));
+
+      // querySelector
+      //   console.log(document.querySelector(".h1Class"));
+      console.log(document.querySelector("#h1Id"));
+      //   console.log(document.querySelectorAll("h1"));
+
+      // createElement
+      let newH4 = document.createElement("h4");
+      newH4.innerText = "New element";
+      console.log(newH4);
+
+      // appendChild
+      document.querySelector("body").appendChild(newH4);
+
+      // insertBefore
+      let ul = document.createElement("ul");
+      document.querySelector("body").appendChild(ul);
+      let li = document.createElement("li");
+      li.innerText = "item1";
+      let ul2 = document.querySelector("ul");
+      ul2.insertBefore(li, ul2.childNodes[0]);
+
+      // removeChild
+
+      // remove
+
+      // cloneNode
+
+      // cloneNode(true)
+
+      // setTimeout & clearTimeout
+      let id = setTimeout(function () {
+        // alert("hi after 3 seconds");
+      }, 3000);
+
+      let id2 = setTimeout(function () {
+        clearTimeout(id);
+        // alert("hi after 2 seconds");
+      }, 2000);
+
+      console.log("the id of the timeout is: ", id);
+      console.log("the id2 of the timeout is: ", id2);
+
+      // setInterval & clearInterval
+      let id3 = setInterval(function () {
+        console.log("create a new bad guy");
+      }, 1000);
+
+      setTimeout(function () {
+        clearInterval(id3);
+        alert("You lost");
+      }, 30000);
+
+      // addEventListener
+
+      // removeEventListener
+    </script>
+  </body>
+</html>
