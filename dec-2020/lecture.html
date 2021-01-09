@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 4</title>
+  </head>
+  <body>
+    First child of body node
+    <h1>First Element Child of body node</h1>
+    <h1 id="hone">h1 tag 1</h1>
+    <h1 class="hclass">h1 tag 2</h1>
+    <h1>h1 tag 3</h1>
+    <p>Welcome to my page</p>
+
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+
+    <button onclick="whenUserClicks()">Click</button>
+    <script>
+      // for loops
+      //   let num = 0;
+      //   while (num <= 10) {
+      //     console.log(`while loop message ` + num);
+      //     num++;
+      //   }
+
+      // 1. starting variable (i.e. starting value)
+      // 2. the condition that must be true for the loop to continue to run
+      // 3. the code that changes the starting value every loop
+
+      //   for (let i = 0; i <= 10; i++) {
+      //     console.log(`for loop message ` + i);
+      //   }
+
+      // break & continue
+
+      //   for (let i = 0; i <= 10; i++) {
+      //     if (i >= 5) {
+      //       break;
+      //     }
+      //     console.log(`for loop message ` + i);
+      //   }
+
+      //   for (let i = 0; i <= 10; i++) {
+      //     if (i === 5) {
+      //       continue;
+      //     }
+      //     console.log(`for loop message ` + i);
+      //   }
+
+      // array methods: concat, sort, reverse
+      //   let arr = [3, 2, 1];
+      //   arr.sort();
+      //   console.log(arr.reverse());
+      let arr2 = [4, 5, 6];
+      //   console.log(arr.reverse().concat(arr2));
+      //   console.log(arr.concat(arr2));
+
+      // array methods: slice, splice
+      //   let arr3 = arr.slice(0, 2);
+      //   console.log(arr);
+      //   console.log(arr3);
+
+      //   let arr3 = arr.splice(0, 2);
+      //   console.log(arr);
+      //   console.log(arr3);
+
+      // string indices & length property
+      //   let arr = [3, 2, 1];
+      //   console.log(arr[0]);
+
+      //   let arrStr = ["C", "h", "o", "i"];
+      //   let arrName = ["Juan", "Choi", "Kurtis", "Tom"];
+      //   let str = "Choi Juan Choi Kurtis";
+      //   console.log(str[3]);
+
+      // parentNode
+      //   console.log(document.querySelector("head").parentNode);
+
+      // nextSibling
+      //   console.log(document.querySelector("h1").nextSibling);
+
+      // previousSibling
+      // console.log(document.querySelector("p").previousSibling);
+
+      // firstChild
+      //   console.log(document.querySelector("body").firstChild);
+
+      // lastChild
+      //   console.log(document.querySelector("html").lastChild);
+
+      // firstElementChild
+      //   console.log(document.querySelector("body").firstElementChild);
+
+      //   locating nodes
+      // getElementsByTagName()
+      console.log(document.getElementsByTagName("h1"));
+      console.log(document.querySelectorAll("h1"));
+
+      // getElementById()
+      console.log(document.getElementById("hone"));
+      console.log(document.querySelector("#hone"));
+
+      console.log(document.querySelector(".hclass"));
+
+      // querySelector()
+
+      // createElement()
+      let h2 = document.createElement("h2");
+
+      // createTextNode() & innerText
+      h2.innerText = "new h2 elment";
+      console.log(h2);
+
+      // appendChild()
+      document.querySelector("body").appendChild(h2);
+
+      // insertBefore()
+      document.querySelector("#hone").insertBefore(h2, null);
+
+      // removeChild()
+      let list = document.querySelector("ul");
+      //   list.removeChild(list.childNodes[0]);
+
+      // remove()
+      //   list.remove();
+
+      // cloneNode() vs cloneNode(true)
+      let ul = document.querySelector("ul");
+      let clone = ul.cloneNode();
+      let cloneTrue = ul.cloneNode(true);
+      console.log(clone);
+      console.log(cloneTrue);
+
+      // events
+      // onclick
+      function whenUserClicks() {
+        let li = document.createElement("li");
+        let userItem = prompt("What would you like to add?");
+        li.innerText = userItem;
+        document.querySelector("ul").appendChild(li);
+      }
+
+      // steps to add elements to the dom (i.e. the HTML document)
+      // 1. use createElement method to create the html element you want
+      let btn = document.createElement("button");
+      // 2. OPTIONAL: add innerText/innerHTML
+      btn.innerText = "Add to list";
+      console.log(btn);
+      // OPTIONAL: add any event listeners
+      btn.addEventListener("click", whenUserClicks);
+      // 3. first use querySelector to locate the html tag that you want to add the new element to, then add it to the HTML document using appendChild
+      document.querySelector("body").appendChild(btn);
+
+      // onmousedown
+
+      // onmouseup
+
+      // onmouseover
+
+      // onmouseout
+
+      // addEventListener('eventName', functionName)
+
+      // codewars.com coding challenges for JS practice
+      // hackerrank.com advance coding challenges
+      // leetcode.com advance coding challenges
+      // https://eloquentjavascript.net
+      // https://flaviocopes.com/page/list-subscribed/
+      //   https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA
+    </script>
+  </body>
+</html>
